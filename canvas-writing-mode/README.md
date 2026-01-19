@@ -81,6 +81,9 @@ characters without rotating the text box when rendered. The biggest advantage of
 is that it requires no changes to the specification around `textAlign`, `textBaseline` or
 `TextMetrics`; the text box is still horizontal as it is now.
 
+Then, we could add `fillTextVertical` and `strokeTextVertical` as convenience methods, though
+they would only avoid a transform and may further confuse users of the alignment attributes.
+
 One downside of this approach is that the `textOrientation` values of `upright` and `sideways` no
 longer match the rendered direction, which may be confusing to those accustomed to CSS. We could
 define new values, invert the CSS meaning of `sideways` and `upright` to match the visual result,
